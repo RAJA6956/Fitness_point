@@ -10,6 +10,9 @@
   --accent-soft: #c4b5fd;
   --surface-border: rgba(148, 163, 184, 0.18);
   --shadow: 0 22px 80px rgba(15, 23, 42, 0.35);
+  --shadow-lg: 0 25px 50px rgba(124, 58, 237, 0.25);
+  --gradient-primary: linear-gradient(135deg, #7c3aed, #1d4ed8);
+  --gradient-accent: linear-gradient(135deg, #06b6d4, #7c3aed);
 }
 
 * {
@@ -39,6 +42,21 @@ button {
   cursor: pointer;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
 .app-shell {
   min-height: 100vh;
 }
@@ -54,6 +72,7 @@ button {
   position: sticky;
   top: 0;
   z-index: 50;
+  animation: slideIn 0.5s ease;
 }
 
 .navbar-brand {
@@ -130,6 +149,14 @@ button {
   border-radius: 24px;
   padding: 1.5rem;
   box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  animation: fadeIn 0.4s ease;
+}
+
+.card:hover {
+  border-color: rgba(148, 163, 184, 0.35);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
 }
 
 .card-header h3 {
@@ -150,13 +177,15 @@ button {
   border-radius: 999px;
   padding: 0.95rem 1.35rem;
   font-weight: 600;
-  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
 }
 
 .button.primary,
 .primary-button {
-  background: linear-gradient(135deg, #7c3aed, #1d4ed8);
+  background: var(--gradient-primary);
   color: white;
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.2);
 }
 
 .button.secondary,
@@ -168,12 +197,13 @@ button {
 .ghost-button {
   background: transparent;
   color: #e2e8f0;
-  border: 1px solid rgba(148, 163, 184, 0.18);
+  border: 1.5px solid rgba(148, 163, 184, 0.25);
 }
 
 .danger-button {
-  background: #ef4444;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
   color: white;
+  box-shadow: 0 10px 25px rgba(239, 68, 68, 0.15);
 }
 
 .button:hover,
@@ -181,7 +211,13 @@ button {
 .secondary-button:hover,
 .ghost-button:hover,
 .danger-button:hover {
-  transform: translateY(-1px);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(124, 58, 237, 0.3);
+}
+
+.ghost-button:hover {
+  background: rgba(148, 163, 184, 0.15);
+  border-color: rgba(148, 163, 184, 0.4);
 }
 
 .input-group {
@@ -198,10 +234,19 @@ button {
 .input-group input,
 .input-group select {
   background: rgba(15, 23, 42, 0.85);
-  border: 1px solid rgba(148, 163, 184, 0.15);
+  border: 1.5px solid rgba(148, 163, 184, 0.15);
   border-radius: 16px;
   padding: 0.95rem 1rem;
   color: #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  outline: none;
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+  background: rgba(15, 23, 42, 0.95);
 }
 
 .input-error {
@@ -281,10 +326,18 @@ button {
 
 .hero-stat {
   padding: 1rem;
-  background: rgba(124, 58, 237, 0.15);
+  background: var(--gradient-accent);
   border-radius: 18px;
   margin-top: 1rem;
   font-weight: 700;
+  color: white;
+  box-shadow: 0 15px 35px rgba(124, 58, 237, 0.2);
+  transition: all 0.3s ease;
+}
+
+.hero-stat:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 45px rgba(124, 58, 237, 0.3);
 }
 
 .feature-grid,
@@ -349,7 +402,8 @@ button {
   padding: 2rem;
   border-radius: 28px;
   border: 1px solid var(--surface-border);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-lg);
+  animation: fadeIn 0.5s ease;
 }
 
 .auth-card h2 {
@@ -404,10 +458,13 @@ button {
 .meal-card {
   display: grid;
   gap: 1rem;
+  border-left: 4px solid #7c3aed;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.8));
 }
 
 .workout-card.completed {
-  border-color: #22c55e;
+  border-left-color: #22c55e;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(30, 41, 59, 0.8));
 }
 
 .workout-card-header,
@@ -432,6 +489,9 @@ button {
   padding: 0.5rem 0.9rem;
   border-radius: 999px;
   font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  display: inline-block;
 }
 
 .card-actions {
@@ -459,8 +519,9 @@ button {
 }
 
 .progress-bar-fill {
-  background: linear-gradient(90deg, #7c3aed, #3b82f6);
+  background: var(--gradient-accent);
   height: 100%;
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.4);
 }
 
 .chart-grid {
@@ -481,8 +542,9 @@ button {
 }
 
 .chart-bar {
-  background: linear-gradient(90deg, #7c3aed, #06b6d4);
+  background: var(--gradient-accent);
   height: 100%;
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.3);
 }
 
 .nutrition-metric,
@@ -509,12 +571,20 @@ button {
   color: white;
   font-size: 0.9rem;
   padding: 1rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
-.macro-slice.calories { background: #7c3aed; }
-.macro-slice.protein { background: #2563eb; }
-.macro-slice.carbs { background: #0ea5e9; }
-.macro-slice.fats { background: #f97316; }
+.macro-slice:hover {
+  transform: scaleY(1.05);
+  opacity: 0.95;
+}
+
+.macro-slice.calories { background: linear-gradient(135deg, #7c3aed, #6366f1); }
+.macro-slice.protein { background: linear-gradient(135deg, #2563eb, #3b82f6); }
+.macro-slice.carbs { background: linear-gradient(135deg, #0ea5e9, #06b6d4); }
+.macro-slice.fats { background: linear-gradient(135deg, #f97316, #ea580c); }
 
 .line-chart {
   display: flex;
@@ -528,9 +598,18 @@ button {
   place-items: end center;
   gap: 0.5rem;
   width: 100%;
-  background: rgba(148, 163, 184, 0.08);
+  background: var(--gradient-accent);
   border-radius: 18px;
   padding: 1rem 0.5rem 0.5rem;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.15);
+}
+
+.line-point:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(124, 58, 237, 0.3);
 }
 
 .bmi-result {
@@ -553,6 +632,7 @@ button {
   display: grid;
   place-items: center;
   z-index: 100;
+  animation: fadeIn 0.2s ease;
 }
 
 .modal-panel {
@@ -561,6 +641,8 @@ button {
   border-radius: 28px;
   border: 1px solid var(--surface-border);
   padding: 2rem;
+  animation: fadeIn 0.3s ease;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
 }
 
 .modal-header {
