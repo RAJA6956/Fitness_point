@@ -8,7 +8,7 @@ A **modern, professional, production-ready fitness dashboard** built with **Reac
 
 ---
 
-## 🎯 Project Overview
+##  Project Overview
 
 The Fitness Management Platform is a **full-featured fitness tracking SPA** that allows users to:
 - Register and log in securely (frontend validation)
@@ -22,7 +22,7 @@ All data persists in **browser LocalStorage**, making it a completely client-sid
 
 ---
 
-## ✨ Key Features (10 Modules)
+##  Key Features (10 Modules)
 
 ### 1. **Landing Page**
 - Modern hero section with call-to-action
@@ -89,7 +89,7 @@ All data persists in **browser LocalStorage**, making it a completely client-sid
 
 ---
 
-## 🏗️ Architecture & Structure
+##  Architecture & Structure
 
 ```
 fitness-management-platform/
@@ -136,7 +136,7 @@ fitness-management-platform/
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Category | Technology |
 |----------|-----------|
@@ -150,7 +150,7 @@ fitness-management-platform/
 
 ---
 
-## 🎨 Design Highlights
+##  Design Highlights
 
 ### **Modern Aesthetic**
 - Dark theme with accent purple/teal colors
@@ -178,7 +178,7 @@ fitness-management-platform/
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 - Node.js 18+ 
@@ -271,7 +271,7 @@ You can create a new account or use the app with test data:
 
 ---
 
-## 💾 Data Persistence
+##  Data Persistence
 
 All data is stored in **browser LocalStorage** under these keys:
 
@@ -292,7 +292,7 @@ localStorage.clear()
 
 ---
 
-## 🔒 Security Notes
+##  Security Notes
 
 ### Frontend Validation
 - Email regex validation
@@ -312,7 +312,7 @@ localStorage.clear()
 
 ---
 
-## 📱 Component Breakdown
+##  Component Breakdown
 
 ### Reusable Components
 
@@ -365,7 +365,7 @@ const { user, login, logout, updateProfile } = useAuth();
 
 ---
 
-## 🎓 Learning Outcomes
+##  Learning Outcomes
 
 This project teaches:
 
@@ -410,7 +410,7 @@ This project teaches:
 
 ---
 
-## 🚀 Future Enhancements
+##  Future Enhancements
 
 - [ ] Backend API integration (Node.js + Express)
 - [ ] Firebase authentication
@@ -425,7 +425,7 @@ This project teaches:
 
 ---
 
-## 📊 Project Statistics
+##  Project Statistics
 
 | Metric | Value |
 |--------|-------|
@@ -440,7 +440,7 @@ This project teaches:
 
 ---
 
-## 🎯 Resume Talking Points
+## Resume Talking Points
 
 Perfect for **interviews** and **portfolio reviews**:
 
@@ -466,7 +466,7 @@ Perfect for **interviews** and **portfolio reviews**:
 
 ---
 
-## 🐛 Common Issues & Fixes
+##  Common Issues & Fixes
 
 ### Issue: Blank Page After Deployment
 **Solution**: Check that `vite.config.js` has correct `base` path for your deploy URL.
@@ -482,7 +482,7 @@ Perfect for **interviews** and **portfolio reviews**:
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 If forking this project:
 1. Create a feature branch: `git checkout -b feature/new-feature`
@@ -492,13 +492,13 @@ If forking this project:
 
 ---
 
-## 📄 License
+##  License
 
 This project is open source and available under the MIT License.
 
 ---
 
-## 👨‍💼 About
+##  About
 
 Built as a **portfolio project** for frontend engineering interviews and skill demonstration. Showcases proficiency in:
 - React & modern JavaScript
@@ -513,7 +513,7 @@ Built as a **portfolio project** for frontend engineering interviews and skill d
 
 ---
 
-## 📞 Support
+##  Support
 
 For questions or issues:
 - Open an issue on GitHub
@@ -521,7 +521,7 @@ For questions or issues:
 
 ---
 
-## ❓ FAQ
+##  FAQ
 
 **Q: Can I use this as a starting template?**  
 A: Yes! Feel free to fork and modify for your own projects.
@@ -537,7 +537,7 @@ A: Absolutely! Replace LocalStorage calls with API requests to your backend serv
 
 ---
 
-## 🌟 If You Like This Project
+##  If You Like This Project
 
 ⭐ Star the repository on GitHub  
 📢 Share with other developers  
